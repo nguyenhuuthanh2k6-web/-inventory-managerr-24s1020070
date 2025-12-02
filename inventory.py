@@ -1,14 +1,9 @@
-def add_product():
-    print("\n=== NHẬP HÀNG MỚI ===")
-    name = input("Tên sản phẩm: ")
-    price = int(input("Giá bán: "))
-    qty = int(input("Số lượng tồn: "))
-
-    product = {
-        "name": name,
-        "price": price,
-        "qty": qty
-    }
-
-    products.append(product)
-    print("✔ Đã nhập hàng thành công!?")
+def view_inventory():
+    if not products:
+        print("Kho hiện đang trống!")
+        return
+    print('Danh sách sản phẩm trong kho:')
+    stt = 1
+    for p in products:
+        print(f"{stt}. Sản phẩm: {p['name']}, giá: {p['price']}, số lượng: {p['qty']}")
+        stt += 1
